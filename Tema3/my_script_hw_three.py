@@ -1,4 +1,9 @@
-from Tema3.my_package_hw3.my_variables_hw_three import n
-from Tema3.my_package_hw3.my_functions_hw_three import f1
+from Tema3.my_package_hw_three.my_functions_hw_three import f1, f_palindrom, f_prim, f_divizori, f_divizor_mare, f_cifre, f_operatii
 
-f1(1)
+f1()
+f_palindrom()
+f_prim()
+f_divizori()
+f_divizor_mare()
+f_cifre()
+f_operatii()
