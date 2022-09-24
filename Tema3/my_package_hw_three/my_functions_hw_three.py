@@ -1,8 +1,6 @@
-from Tema3.my_package_hw_three.my_variables_hw_three import n, pal, prim, divizori, divizor_mare
-
-
 def f1():
-    a = input('Introduceti un numar intreg de la tastatura:')
+    global a
+    a = input('Introduceti un numar intreg!\n>')
     try:
         a = int(a)
     except ValueError:
@@ -25,43 +23,44 @@ def f1():
             return a
 
 def f_palindrom():
-    if a == str(a)[::-1]:
-        print('Numarul este palindrom')
-        return pal == True
-    else:
-        print('Numarul nu este palindrom')
-        return pal == False
+    global a
+    a = int(a)
+    if str(a) == str(a)[::-1]:
+        pal = True
+        return pal
+    pal = False
+    return pal
 
 def f_prim():
-    for i in range(2, int(a / 2) + 1):
+    global a
+    a = int(a)
+    for i in range(2, a):
         if (a % i) == 0:
-            print('Numarul nu este prim')
             prim = False
             return prim
-        break
     else:
-        print('Numarul este prim')
         prim = True
         return prim
 
 def f_divizori():
-    for i in range(2, a // 2 + 1):
+    global a
+    a = int(a)
+    divizori = []
+    for i in range(2, a):
         if a % i == 0:
             divizori.append(i)
-            return divizori
+    return divizori
 
 def f_divizor_mare():
+    global a
+    a = int(a)
     for i in range(2, a):
         if a % i == 0:
             divizor_mare = i
-            return divizor_mare
+    return divizor_mare
 
-def f_cifre():
-    if a >= 0:
-        cifre = len(str(a))
-        return cifre
 
-def f_operatii():
+def f_operatii(pal, divizori, prim, divizor_mare):
     operatii_numar = {
         "is_palindrome": pal,
         "divisors": divizori,
